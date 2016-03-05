@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mesh_type.name %>
+</p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @mesh_type.label %>
+</p>
+
+<%= link_to 'Edit', edit_mesh_type_path(@mesh_type) %> |
+<%= link_to 'Back', mesh_types_path %>
