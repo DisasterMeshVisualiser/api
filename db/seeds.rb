@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+10.times do |i|
+  MeshType.create(
+    :name => FFaker::Name.first_name,
+    :label => FFaker::NameJA.first_name
+  )
+end
