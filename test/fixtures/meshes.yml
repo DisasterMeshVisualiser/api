@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value: MyString
+  mesh_type_id: 
+  mesh_code_id: 
+
+two:
+  value: MyString
+  mesh_type_id: 
+  mesh_code_id: 
