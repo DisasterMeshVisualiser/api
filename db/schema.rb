@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306150740) do
+ActiveRecord::Schema.define(version: 20160306152621) do
 
   create_table "mesh_codes", force: :cascade do |t|
     t.string   "value"
     t.integer  "rank"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.float    "southwest_lat"
+    t.float    "southwest_long"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "mesh_types", force: :cascade do |t|
