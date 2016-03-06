@@ -1,4 +1,4 @@
 class MeshCode < ActiveRecord::Base
   # NODE: need?
-  has_many :mesh
+  has_many :meshs
 end

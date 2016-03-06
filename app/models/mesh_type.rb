@@ -1,3 +1,4 @@
 class MeshType < ActiveRecord::Base
-  has_many :mesh
+  has_many :meshs
+  has_many :mesh_codes, :through => :meshs
 end
