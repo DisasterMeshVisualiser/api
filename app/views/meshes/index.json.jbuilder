@@ -1,4 +1,6 @@
-json.array!(@meshes) do |mesh|
-  json.extract! mesh, :id, :value, :mesh_type_id, :mesh_code_id
-  json.url mesh_url(mesh, format: :json)
+json.set! :data do
+  json.array!(@mesh_type.meshs) do |mesh|
+    json.set! :meshcode, mesh.mesh_code.value
+    json.extract! mesh, :value
+  end
 end
