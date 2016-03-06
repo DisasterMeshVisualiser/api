@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @mesh_code.value %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @mesh_code.rank %>
+</p>
+
+<p>
+  <strong>Southwest lat:</strong>
+  <%= @mesh_code.southwest_lat %>
+</p>
+
+<p>
+  <strong>Southwest long:</strong>
+  <%= @mesh_code.southwest_long %>
+</p>
+
+<%= link_to 'Edit', edit_mesh_code_path(@mesh_code) %> |
+<%= link_to 'Back', mesh_codes_path %>

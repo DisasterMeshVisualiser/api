@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mesh Codes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Rank</th>
+      <th>Southwest lat</th>
+      <th>Southwest long</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mesh_codes.each do |mesh_code| %>
+      <tr>
+        <td><%= mesh_code.value %></td>
+        <td><%= mesh_code.rank %></td>
+        <td><%= mesh_code.southwest_lat %></td>
+        <td><%= mesh_code.southwest_long %></td>
+        <td><%= link_to 'Show', mesh_code %></td>
+        <td><%= link_to 'Edit', edit_mesh_code_path(mesh_code) %></td>
+        <td><%= link_to 'Destroy', mesh_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mesh code', new_mesh_code_path %>

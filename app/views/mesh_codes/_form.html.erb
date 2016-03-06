@@ -1,0 +1,33 @@
+<%= form_for(@mesh_code) do |f| %>
+  <% if @mesh_code.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mesh_code.errors.count, "error") %> prohibited this mesh_code from being saved:</h2>
+
+      <ul>
+      <% @mesh_code.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :rank %><br>
+    <%= f.number_field :rank %>
+  </div>
+  <div class="field">
+    <%= f.label :southwest_lat %><br>
+    <%= f.text_field :southwest_lat %>
+  </div>
+  <div class="field">
+    <%= f.label :southwest_long %><br>
+    <%= f.text_field :southwest_long %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

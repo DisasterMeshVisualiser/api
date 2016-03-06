@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301060546) do
+ActiveRecord::Schema.define(version: 20160306150740) do
+
+  create_table "mesh_codes", force: :cascade do |t|
+    t.string   "value"
+    t.integer  "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "mesh_types", force: :cascade do |t|
     t.string   "name",       null: false
@@ -19,5 +26,16 @@ ActiveRecord::Schema.define(version: 20160301060546) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "meshes", force: :cascade do |t|
+    t.string   "value"
+    t.integer  "mesh_type_id"
+    t.integer  "mesh_code_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "meshes", ["mesh_code_id"], name: "index_meshes_on_mesh_code_id"
+  add_index "meshes", ["mesh_type_id"], name: "index_meshes_on_mesh_type_id"
 
 end
