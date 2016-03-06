@@ -6,6 +6,7 @@ module API
       formatter :json, Grape::Formatter::Jbuilder
 
       mount API::V1::MeshType
+      mount API::V1::Mesh
 
       add_swagger_documentation base_path: '/api',
                                 api_version: 'v1',
