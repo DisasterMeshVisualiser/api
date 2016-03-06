@@ -69,6 +69,6 @@ class MeshCodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mesh_code_params
-      params.require(:mesh_code).permit(:value, :rank)
+      params.require(:mesh_code).permit(:value, :rank, :southwest_lat, :southwest_long)
     end
 end

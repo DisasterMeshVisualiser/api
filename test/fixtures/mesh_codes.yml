@@ -3,7 +3,11 @@
 one:
   value: MyString
   rank: 1
+  southwest_lat: 1.5
+  southwest_long: 1.5
 
 two:
   value: MyString
   rank: 1
+  southwest_lat: 1.5
+  southwest_long: 1.5

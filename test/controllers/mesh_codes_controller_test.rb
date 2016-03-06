@@ -18,7 +18,7 @@ class MeshCodesControllerTest < ActionController::TestCase
 
   test "should create mesh_code" do
     assert_difference('MeshCode.count') do
-      post :create, mesh_code: { rank: @mesh_code.rank, value: @mesh_code.value }
+      post :create, mesh_code: { rank: @mesh_code.rank, southwest_lat: @mesh_code.southwest_lat, southwest_long: @mesh_code.southwest_long, value: @mesh_code.value }
     end
 
     assert_redirected_to mesh_code_path(assigns(:mesh_code))
@@ -35,7 +35,7 @@ class MeshCodesControllerTest < ActionController::TestCase
   end
 
   test "should update mesh_code" do
-    patch :update, id: @mesh_code, mesh_code: { rank: @mesh_code.rank, value: @mesh_code.value }
+    patch :update, id: @mesh_code, mesh_code: { rank: @mesh_code.rank, southwest_lat: @mesh_code.southwest_lat, southwest_long: @mesh_code.southwest_long, value: @mesh_code.value }
     assert_redirected_to mesh_code_path(assigns(:mesh_code))
   end
 
