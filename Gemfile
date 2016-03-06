@@ -33,6 +33,9 @@ gem 'grape-swagger'
 gem 'grape-swagger-ui'
 gem 'grape-swagger-rails'
 
+# geojson parser
+gem 'rgeo-geojson'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
