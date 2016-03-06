@@ -24,8 +24,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'ffaker'
 
+# grape
 gem 'grape'
 gem 'grape-jbuilder'
+
+# swagger doc
+gem 'grape-swagger'
+gem 'grape-swagger-ui'
+gem 'grape-swagger-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

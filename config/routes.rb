@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # api
   mount API::Root => '/'
-
+  mount GrapeSwaggerRails::Engine => '/docs'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
