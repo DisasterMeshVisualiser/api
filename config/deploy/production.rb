@@ -1,21 +1,23 @@
 set :stage, :production
 
-role :app, %w{deploy@example.com} #アプリケーションサーバ
-role :web, %w{deploy@example.com} #webサーバ
-role :db,  %w{deploy@example.com} #DBサーバ
+host = 'mesh.cps.im.dendai.ac.jp'
+user = 'merry'
+link = "#{user}@#{host}"
 
-# YAML::load(ERB.new(IO.read(database_configuration_file)).result)
-# YAML.load(ERB.new(File.read(RAILS_ROOT + '/config/twitter_auth.yml')).result)[environment]
-SSH_CONFIG = YAML.load(ERB.new(File.read(File.expand_path('../../ssh_config.yml', __FILE__))).result)['production']
-require 'pry'
-binding.pry
+port = 18122
+key_path = '~/.ssh/hiro_cps'
 
-server SSH_CONFIG['host'],
-    user: SSH_CONFIG['user'],
+role :app, [link] #アプリケーションサーバ
+role :web, [link] #webサーバ
+role :db,  [link] #DBサーバ
+
+
+server host,
+    user: user,
     role: %w{web app db},
     ssh_options: {
-        port: SSH_CONFIG['port'],
-        keys: SSH_CONFIG['keypath'],
+        port: port,
+        keys: key_path,
         auth_methods: %w(publickey),
     }
 
