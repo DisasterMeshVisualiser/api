@@ -4,14 +4,18 @@ role :app, %w{deploy@example.com} #アプリケーションサーバ
 role :web, %w{deploy@example.com} #webサーバ
 role :db,  %w{deploy@example.com} #DBサーバ
 
-ssh_config = Rails.application.secrets.deploy['ssh']
+# YAML::load(ERB.new(IO.read(database_configuration_file)).result)
+# YAML.load(ERB.new(File.read(RAILS_ROOT + '/config/twitter_auth.yml')).result)[environment]
+SSH_CONFIG = YAML.load(ERB.new(File.read(File.expand_path('../../ssh_config.yml', __FILE__))).result)['production']
+require 'pry'
+binding.pry
 
-server ssh_config['host'],
-    user: ssh_config['user'],
+server SSH_CONFIG['host'],
+    user: SSH_CONFIG['user'],
     role: %w{web app db},
     ssh_options: {
-        port: ssh_config['port'],
-        keys: ssh_config['keypath'],
+        port: SSH_CONFIG['port'],
+        keys: SSH_CONFIG['keypath'],
         auth_methods: %w(publickey),
     }
 

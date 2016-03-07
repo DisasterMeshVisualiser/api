@@ -1,0 +1,15 @@
+default: &default
+  ssh:
+    host: <%= ENV["DEPLOY_SSH_HOST"] %>
+    user: <%= ENV["DEPLOY_SSH_USER"] %>
+    port: <%= ENV["DEPLOY_SSH_PORT"] %>
+    keypath: <%= ENV["DEPLOY_SSH_KEYPATH"] %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
