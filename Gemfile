@@ -36,6 +36,13 @@ gem 'grape-swagger-rails'
 # geojson parser
 gem 'rgeo-geojson'
 
+# capistrano
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+
+gem 'dotenv-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
