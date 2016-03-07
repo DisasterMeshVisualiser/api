@@ -17,6 +17,9 @@ require 'capistrano/deploy'
 #
 # require 'capistrano/rvm'
 require 'capistrano/rbenv'
+set :rbenv_ruby, '2.2.3'
+set :rbenv_path, '/home/merry/.rbenv/'
+
 # require 'capistrano/chruby'
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'

@@ -1,17 +1,23 @@
 set :stage, :production
 
-role :app, %w{deploy@example.com} #アプリケーションサーバ
-role :web, %w{deploy@example.com} #webサーバ
-role :db,  %w{deploy@example.com} #DBサーバ
+host = 'mesh.cps.im.dendai.ac.jp'
+user = 'merry'
+link = "#{user}@#{host}"
 
-ssh_config = Rails.application.secrets.deploy['ssh']
+port = 18122
+key_path = '~/.ssh/hiro_cps'
 
-server ssh_config['host'],
-    user: ssh_config['user'],
+role :app, [link] #アプリケーションサーバ
+role :web, [link] #webサーバ
+role :db,  [link] #DBサーバ
+
+
+server host,
+    user: user,
     role: %w{web app db},
     ssh_options: {
-        port: ssh_config['port'],
-        keys: ssh_config['keypath'],
+        port: port,
+        keys: key_path,
         auth_methods: %w(publickey),
     }
 
