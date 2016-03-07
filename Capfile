@@ -17,8 +17,11 @@ require 'capistrano/deploy'
 #
 # require 'capistrano/rvm'
 require 'capistrano/rbenv'
+
+set :rbenv_system, :system
 set :rbenv_ruby, '2.2.3'
 set :rbenv_path, '/home/merry/.rbenv/'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 
 # require 'capistrano/chruby'
 require 'capistrano/bundler'
