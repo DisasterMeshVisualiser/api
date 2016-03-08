@@ -10,6 +10,7 @@ set :scm, :git
 set :log_level, :debug
 set :pty, true
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets bundle public/system public/assets}
+set :linked_files, %w{.env}
 set :default_env, { path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" }
 set :keep_releases, 5
 
