@@ -127,6 +127,7 @@ GEM
     minitest (5.8.4)
     multi_json (1.11.2)
     multi_xml (0.5.5)
+    mysql2 (0.4.3)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.0.2)
@@ -238,6 +239,7 @@ DEPENDENCIES
   grape-swagger-ui
   jbuilder (~> 2.0)
   jquery-rails
+  mysql2
   pry
   rails (= 4.2.4)
   rgeo-geojson
