@@ -1,2 +1,2 @@
 listen "/tmp/unicorn.disaster.sock"
-pid "/tmp/unicorn.pid"
+pid "/var/www/disasterMeshVisualiser/current/tmp/pids/unicorn.pid"
