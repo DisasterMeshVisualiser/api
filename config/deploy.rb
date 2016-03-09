@@ -29,3 +29,19 @@ namespace :deploy do #タスクnamespace
   after :finishing, 'deploy:cleanup'
 end
 after 'deploy:publishing', 'deploy:restart'
+
+
+namespace :remote_rake do
+  desc "Run a task on a remote server."
+  # run like: cap staging rake:invoke task=db:seed_fu
+  task :invoke do
+    on roles(:all) do
+      within current_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, ENV['task']
+        end
+      end
+    end
+  end
+end
+

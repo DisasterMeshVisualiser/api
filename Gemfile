@@ -42,6 +42,8 @@ gem 'capistrano3-unicorn'
 
 gem 'dotenv-rails'
 
+gem 'binding_of_caller'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
