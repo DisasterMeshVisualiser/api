@@ -1,2 +1,2 @@
 listen "/tmp/unicorn.disaster.sock"
-pid File.expand_path('../../tmp/pids/unicorn.pid', __FILE__)
+pid "/tmp/unicorn.pid"
