@@ -7,9 +7,9 @@ link = "#{user}@#{host}"
 port = 18122
 key_path = '~/.ssh/hiro_cps'
 
-role :app, [link] #アプリケーションサーバ
-role :web, [link] #webサーバ
-role :db,  [link] #DBサーバ
+role :app, "#{user}@#{host}" #アプリケーションサーバ
+role :web, "#{user}@#{host}" #webサーバ
+role :db,  "#{user}@#{host}", :primary => true
 
 
 server host,
