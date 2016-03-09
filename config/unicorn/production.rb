@@ -10,8 +10,8 @@ listen "/tmp/unicorn.sock", :backlog => 64
 # pid "/var/www/disasterMeshVisualiser/current/tmp/pids/unicorn.pid"
 pid "/var/www/disasterMeshVisualiser/shared/tmp/pids/unicorn.pid"
 
-stderr_path "#{@app_path}/log/unicorn.stderr.log"
-stdout_path "#{@app_path}/log/unicorn.stdout.log"
+stderr_path "#{working_directory}/log/unicorn.stderr.log"
+stdout_path "#{working_directory}/log/unicorn.stdout.log"
 
 before_fork do |server, worker|
   ENV['BUNDLE_GEMFILE'] = File.expand_path('Gemfile', ENV['RAILS_ROOT'])
