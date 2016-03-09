@@ -38,6 +38,7 @@ gem 'rgeo-geojson'
 gem 'capistrano'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
+gem 'capistrano3-unicorn'
 
 gem 'dotenv-rails'
 
@@ -52,6 +53,7 @@ gem 'dotenv-rails'
 
 group :production do
   gem 'mysql2'
+  gem 'unicorn'
 end
 
 group :development, :test do
