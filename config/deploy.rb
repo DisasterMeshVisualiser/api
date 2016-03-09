@@ -28,3 +28,4 @@ namespace :deploy do #タスクnamespace
   end
   after :finishing, 'deploy:cleanup'
 end
+after 'deploy:publishing', 'deploy:restart'
