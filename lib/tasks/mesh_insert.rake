@@ -83,7 +83,7 @@ namespace :mesh_insert do
             if t >= r.rand(3)
               mesh_type.meshs.create(
                   mesh_code_id: meshcode.id,
-                  value: r.rand(1),
+                  value: r.rand(),
               )
             end
           end
