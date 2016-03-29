@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 20160306152622) do
   create_table "mesh_codes", force: :cascade do |t|
     t.string   "value"
     t.integer  "rank"
-    t.decimal  "southwest_lat",  precision: 6, scale: 3
-    t.decimal  "southwest_long", precision: 6, scale: 3
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.decimal  "southwest_lat",  precision: 11, scale: 8
+    t.decimal  "southwest_long", precision: 11, scale: 8
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
 
   create_table "mesh_types", force: :cascade do |t|
