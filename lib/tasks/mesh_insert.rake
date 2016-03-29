@@ -63,9 +63,10 @@ namespace :mesh_insert do
     ]
 
     mesh_types = [
-        MeshType.find_or_create_by(label: 'random_light', name: 'ランダム(過疎)'),
-        MeshType.find_or_create_by(label: 'random_normal', name: 'ランダム(普通)'),
-        MeshType.find_or_create_by(label: 'random_congestion', name: 'ランダム(過密)')
+        MeshType.find_or_create_by(label: 'random_light', name: '液状化リスク_震度6_'),
+        MeshType.find_or_create_by(label: 'random_normal', name: '火災リスク_'),
+        MeshType.find_or_create_by(label: 'random_congestion', name: '内水被害リスク_'),
+        MeshType.find_or_create_by(label: 'random_normal2', name: '人口分布_')
     ]
 
     r = Random.new
@@ -80,7 +81,7 @@ namespace :mesh_insert do
             if mesh_type.mesh_codes.exists?(id: meshcode.id)
               next
             end
-            if t >= r.rand(3)
+            if t >= r.rand(4)
               mesh_type.meshs.create(
                   mesh_code_id: meshcode.id,
                   value: r.rand(),

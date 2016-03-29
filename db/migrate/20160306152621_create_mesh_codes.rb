@@ -3,8 +3,8 @@ class CreateMeshCodes < ActiveRecord::Migration
     create_table :mesh_codes do |t|
       t.string :value
       t.integer :rank
-      t.float :southwest_lat
-      t.float :southwest_long
+      t.decimal :southwest_lat, precision: 6, scale: 3
+      t.decimal :southwest_long, precision: 6, scale: 3
 
       t.timestamps null: false
     end
